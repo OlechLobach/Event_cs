@@ -1,11 +1,25 @@
-namespace TestEvent
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+[TestClass]
+public class IntExtensionsTest
 {
-    [TestClass]
-    public class UnitTest1
+    [TestMethod]
+    public void IsFibonacci_WhenNumberIsFibonacci_ReturnsTrue()
     {
-        [TestMethod]
-        public void TestMethod1()
-        {
-        }
+        int fibonacciNumber = 5;
+
+        bool result = fibonacciNumber.IsFibonacci();
+
+        Assert.IsTrue(result);
+    }
+
+    [TestMethod]
+    public void IsFibonacci_WhenNumberIsNotFibonacci_ReturnsFalse()
+    {
+        int nonFibonacciNumber = 10;
+
+        bool result = nonFibonacciNumber.IsFibonacci();
+
+        Assert.IsFalse(result);
     }
 }
